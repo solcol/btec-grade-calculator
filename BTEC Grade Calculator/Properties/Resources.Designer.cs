@@ -99,5 +99,15 @@ namespace BTEC_Grade_Calculator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_year_of_horse_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-year-of-horse-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
