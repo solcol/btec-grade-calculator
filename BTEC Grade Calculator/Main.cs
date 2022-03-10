@@ -10,7 +10,6 @@ namespace BTEC_Grade_Calculator
         bool shownTooManyUnitsWarning = false;
         public Main()
         {
-
             InitializeComponent();
         }
 
@@ -43,7 +42,7 @@ namespace BTEC_Grade_Calculator
         {
             int unitsInputted = sliderPass.Value + sliderMerit.Value + sliderDist.Value;
 
-            statusUnits.Text = $"{unitsInputted} Units";
+            statusUnits.Text = $"{unitsInputted}/18 Units";
 
 
             if (unitsInputted > 18)
@@ -78,7 +77,7 @@ namespace BTEC_Grade_Calculator
         private void distScrolled(object sender, EventArgs e)
         {
             onScroll();
-            labelDist.Text = $"Distinction ({sliderDist.Value})";
+            labelDist.Text = $"Dist ({sliderDist.Value})";
         }
 
         private void aboutClick(object sender, EventArgs e)

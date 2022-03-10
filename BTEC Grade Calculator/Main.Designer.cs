@@ -37,7 +37,6 @@
             this.labelMerit = new System.Windows.Forms.Label();
             this.sliderMerit = new System.Windows.Forms.TrackBar();
             this.gradeOutput = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.sourceCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,17 +52,20 @@
             // 
             // sliderPass
             // 
-            this.sliderPass.Location = new System.Drawing.Point(9, 43);
+            this.sliderPass.AutoSize = false;
+            this.sliderPass.BackColor = System.Drawing.Color.BurlyWood;
+            this.sliderPass.LargeChange = 1;
+            this.sliderPass.Location = new System.Drawing.Point(0, 35);
             this.sliderPass.Maximum = 18;
             this.sliderPass.Name = "sliderPass";
-            this.sliderPass.Size = new System.Drawing.Size(428, 45);
+            this.sliderPass.Size = new System.Drawing.Size(175, 45);
             this.sliderPass.TabIndex = 0;
             this.sliderPass.ValueChanged += new System.EventHandler(this.passScrolled);
             // 
             // labelPass
             // 
             this.labelPass.AutoSize = true;
-            this.labelPass.Location = new System.Drawing.Point(6, 27);
+            this.labelPass.Location = new System.Drawing.Point(6, 19);
             this.labelPass.Name = "labelPass";
             this.labelPass.Size = new System.Drawing.Size(30, 13);
             this.labelPass.TabIndex = 1;
@@ -71,15 +73,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.labelDist);
             this.groupBox1.Controls.Add(this.sliderDist);
             this.groupBox1.Controls.Add(this.labelMerit);
-            this.groupBox1.Controls.Add(this.sliderMerit);
             this.groupBox1.Controls.Add(this.labelPass);
             this.groupBox1.Controls.Add(this.sliderPass);
-            this.groupBox1.Location = new System.Drawing.Point(15, 12);
+            this.groupBox1.Controls.Add(this.sliderMerit);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(443, 196);
+            this.groupBox1.Size = new System.Drawing.Size(181, 227);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Units at Grade";
@@ -87,7 +90,7 @@
             // labelDist
             // 
             this.labelDist.AutoSize = true;
-            this.labelDist.Location = new System.Drawing.Point(6, 129);
+            this.labelDist.Location = new System.Drawing.Point(6, 147);
             this.labelDist.Name = "labelDist";
             this.labelDist.Size = new System.Drawing.Size(56, 13);
             this.labelDist.TabIndex = 5;
@@ -95,17 +98,20 @@
             // 
             // sliderDist
             // 
-            this.sliderDist.Location = new System.Drawing.Point(9, 145);
+            this.sliderDist.AutoSize = false;
+            this.sliderDist.BackColor = System.Drawing.Color.Gold;
+            this.sliderDist.LargeChange = 1;
+            this.sliderDist.Location = new System.Drawing.Point(0, 163);
             this.sliderDist.Maximum = 18;
             this.sliderDist.Name = "sliderDist";
-            this.sliderDist.Size = new System.Drawing.Size(428, 45);
+            this.sliderDist.Size = new System.Drawing.Size(175, 45);
             this.sliderDist.TabIndex = 4;
             this.sliderDist.ValueChanged += new System.EventHandler(this.distScrolled);
             // 
             // labelMerit
             // 
             this.labelMerit.AutoSize = true;
-            this.labelMerit.Location = new System.Drawing.Point(6, 78);
+            this.labelMerit.Location = new System.Drawing.Point(6, 83);
             this.labelMerit.Name = "labelMerit";
             this.labelMerit.Size = new System.Drawing.Size(30, 13);
             this.labelMerit.TabIndex = 3;
@@ -113,31 +119,29 @@
             // 
             // sliderMerit
             // 
-            this.sliderMerit.Location = new System.Drawing.Point(9, 94);
+            this.sliderMerit.AutoSize = false;
+            this.sliderMerit.BackColor = System.Drawing.Color.Silver;
+            this.sliderMerit.LargeChange = 1;
+            this.sliderMerit.Location = new System.Drawing.Point(0, 99);
             this.sliderMerit.Maximum = 18;
             this.sliderMerit.Name = "sliderMerit";
-            this.sliderMerit.Size = new System.Drawing.Size(428, 45);
+            this.sliderMerit.Size = new System.Drawing.Size(175, 45);
             this.sliderMerit.TabIndex = 2;
             this.sliderMerit.ValueChanged += new System.EventHandler(this.meritScrolled);
             // 
             // gradeOutput
             // 
+            this.gradeOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gradeOutput.BackColor = System.Drawing.SystemColors.Control;
-            this.gradeOutput.Location = new System.Drawing.Point(91, 231);
+            this.gradeOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gradeOutput.Location = new System.Drawing.Point(0, 240);
             this.gradeOutput.Name = "gradeOutput";
             this.gradeOutput.ReadOnly = true;
-            this.gradeOutput.Size = new System.Drawing.Size(367, 20);
+            this.gradeOutput.Size = new System.Drawing.Size(175, 13);
             this.gradeOutput.TabIndex = 3;
             this.gradeOutput.Text = "FAIL";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 234);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Your Grade:";
+            this.gradeOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // statusStrip1
             // 
@@ -145,27 +149,29 @@
             this.toolStripDropDownButton1,
             this.statusUnits,
             this.statusPoints});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 293);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 272);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(470, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(175, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripDropDownButton1
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sourceCodeToolStripMenuItem,
             this.aboutToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.Image = global::BTEC_Grade_Calculator.Properties.Resources.icons8_info_16;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.RightToLeftAutoMirrorImage = true;
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(66, 20);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 20);
             this.toolStripDropDownButton1.Text = "Program";
             // 
             // sourceCodeToolStripMenuItem
             // 
+            this.sourceCodeToolStripMenuItem.Image = global::BTEC_Grade_Calculator.Properties.Resources.icons8_code_16;
+            this.sourceCodeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.sourceCodeToolStripMenuItem.Name = "sourceCodeToolStripMenuItem";
             this.sourceCodeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.sourceCodeToolStripMenuItem.Text = "Source Code";
@@ -173,6 +179,8 @@
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.Image = global::BTEC_Grade_Calculator.Properties.Resources.icons8_about_16;
+            this.aboutToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.aboutToolStripMenuItem.Text = "About";
@@ -192,15 +200,18 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 315);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(175, 294);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.gradeOutput);
             this.Controls.Add(this.groupBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Main";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Grades";
             ((System.ComponentModel.ISupportInitialize)(this.sliderPass)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -223,7 +234,6 @@
         private System.Windows.Forms.Label labelMerit;
         private System.Windows.Forms.TrackBar sliderMerit;
         private System.Windows.Forms.TextBox gradeOutput;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusUnits;
         private System.Windows.Forms.ToolStripStatusLabel statusPoints;
