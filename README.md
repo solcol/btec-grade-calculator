@@ -1,5 +1,4 @@
-# Solihull College Work: BTEC Grade Calculator
-## & Supporting Work
+# Solihull College Work: BTEC Grade Calculator & Supporting A2 Work
 
 ![A screenshot of the program](https://img.tomr.me/Readmes/solcol-btecgradecalculator/BTEC_Grade_Calculator_OUHcBfCvCl.png)
 
