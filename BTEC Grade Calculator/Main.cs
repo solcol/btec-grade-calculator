@@ -8,6 +8,8 @@ namespace BTEC_Grade_Calculator
     public partial class Main : Form
     {
         bool shownTooManyUnitsWarning = false;
+        bool generateForecast = false;
+        int unitsInputted = 0;
         public Main()
         {
             InitializeComponent();
@@ -16,7 +18,7 @@ namespace BTEC_Grade_Calculator
 
         private void calculateGrades()
         {
-            string finalGrade = "FAIL";
+            string finalGrade = "Fail";
             int passPoints = sliderPass.Value * 70;
             int meritPoints = sliderMerit.Value * 80;
             int distPoints = sliderDist.Value * 90;
@@ -24,7 +26,15 @@ namespace BTEC_Grade_Calculator
 
             statusPoints.Text = $"{totalPoints} Points";
 
-            if (totalPoints < 1260) { finalGrade = "FAIL"; }
+            if(generateForecast && unitsInputted < 18 && unitsInputted > 0)
+            {
+                int currentAverage = totalPoints / unitsInputted;
+                int assumedPoints = (18 - unitsInputted) * currentAverage;
+                statusPoints.Text = $"{totalPoints} + {assumedPoints} Points";
+                totalPoints += assumedPoints;
+            }
+
+            if (totalPoints < 1260) { finalGrade = "Fail"; }
             else if (totalPoints >= 1260 && totalPoints < 1300) { finalGrade = "Pass Pass Pass"; }
             else if (totalPoints >= 1300 && totalPoints < 1340) { finalGrade = "Merit Pass Pass"; }
             else if (totalPoints >= 1340 && totalPoints < 1380) { finalGrade = "Merit Merit Pass"; }
@@ -36,14 +46,21 @@ namespace BTEC_Grade_Calculator
             else if (totalPoints >= 1560 && totalPoints < 1590) { finalGrade = "Dist* Dist* Dist"; }
             else if (totalPoints >= 1590) { finalGrade = "Dist* Dist* Dist*"; }
 
-            gradeOutput.Text = finalGrade;
+            if(generateForecast && unitsInputted < 18)
+            {
+                gradeOutput.Text = $"{finalGrade}{Environment.NewLine}(forecast)";
+            }
+            else
+            {
+                gradeOutput.Text = finalGrade;
+            }
+
         }
         private void onScroll()
         {
-            int unitsInputted = sliderPass.Value + sliderMerit.Value + sliderDist.Value;
+            unitsInputted = sliderPass.Value + sliderMerit.Value + sliderDist.Value;
 
             statusUnits.Text = $"{unitsInputted}/18 Units";
-
 
             if (unitsInputted > 18)
             {
@@ -91,6 +108,21 @@ namespace BTEC_Grade_Calculator
         private void sourceClick(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/itsmeimtom/solcol-btecgradecalculator");
+        }
+
+        private void forecastYesClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Forecast grades are generated with the assumption that you will complete 18 total units, and will complete the remainder at smilar attainment.", "Just so you know", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            generateForecast = true;
+            this.Text = "Grades (forecasting)";
+            calculateGrades();
+        }
+
+        private void forecastNoClick(object sender, EventArgs e)
+        {
+            generateForecast = false;
+            this.Text = "Grades";
+            calculateGrades();
         }
     }
 }

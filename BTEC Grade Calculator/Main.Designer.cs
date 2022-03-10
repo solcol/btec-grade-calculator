@@ -32,9 +32,11 @@
             this.gradeOutput = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.forecastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forecastYes = new System.Windows.Forms.ToolStripMenuItem();
+            this.forecastNo = new System.Windows.Forms.ToolStripMenuItem();
             this.sourceCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.forecastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusUnits = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusPoints = new System.Windows.Forms.ToolStripStatusLabel();
             this.sliderMerit = new System.Windows.Forms.TrackBar();
@@ -43,8 +45,6 @@
             this.labelDist = new System.Windows.Forms.Label();
             this.labelMerit = new System.Windows.Forms.Label();
             this.labelPass = new System.Windows.Forms.Label();
-            this.forecastYes = new System.Windows.Forms.ToolStripMenuItem();
-            this.forecastNo = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sliderMerit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderPass)).BeginInit();
@@ -55,12 +55,13 @@
             // 
             this.gradeOutput.BackColor = System.Drawing.SystemColors.Control;
             this.gradeOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gradeOutput.Location = new System.Drawing.Point(0, 223);
+            this.gradeOutput.Location = new System.Drawing.Point(0, 193);
+            this.gradeOutput.Multiline = true;
             this.gradeOutput.Name = "gradeOutput";
             this.gradeOutput.ReadOnly = true;
-            this.gradeOutput.Size = new System.Drawing.Size(184, 13);
+            this.gradeOutput.Size = new System.Drawing.Size(234, 43);
             this.gradeOutput.TabIndex = 3;
-            this.gradeOutput.Text = "FAIL";
+            this.gradeOutput.Text = "Hmm";
             this.gradeOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // statusStrip1
@@ -71,7 +72,7 @@
             this.statusPoints});
             this.statusStrip1.Location = new System.Drawing.Point(0, 239);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(184, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(234, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -89,24 +90,6 @@
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 20);
             this.toolStripDropDownButton1.Text = "Program";
             // 
-            // sourceCodeToolStripMenuItem
-            // 
-            this.sourceCodeToolStripMenuItem.Image = global::BTEC_Grade_Calculator.Properties.Resources.icons8_code_16;
-            this.sourceCodeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.sourceCodeToolStripMenuItem.Name = "sourceCodeToolStripMenuItem";
-            this.sourceCodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sourceCodeToolStripMenuItem.Text = "Source Code";
-            this.sourceCodeToolStripMenuItem.Click += new System.EventHandler(this.sourceClick);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Image = global::BTEC_Grade_Calculator.Properties.Resources.icons8_about_16;
-            this.aboutToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutClick);
-            // 
             // forecastToolStripMenuItem
             // 
             this.forecastToolStripMenuItem.CheckOnClick = true;
@@ -116,9 +99,40 @@
             this.forecastToolStripMenuItem.Image = global::BTEC_Grade_Calculator.Properties.Resources.icons8_year_of_horse_16;
             this.forecastToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.forecastToolStripMenuItem.Name = "forecastToolStripMenuItem";
-            this.forecastToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.forecastToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.forecastToolStripMenuItem.Text = "Forecast?";
-            this.forecastToolStripMenuItem.ToolTipText = "Generate a forecast grade based on 18 units and using current average";
+            // 
+            // forecastYes
+            // 
+            this.forecastYes.Name = "forecastYes";
+            this.forecastYes.Size = new System.Drawing.Size(91, 22);
+            this.forecastYes.Text = "Yes";
+            this.forecastYes.Click += new System.EventHandler(this.forecastYesClick);
+            // 
+            // forecastNo
+            // 
+            this.forecastNo.Name = "forecastNo";
+            this.forecastNo.Size = new System.Drawing.Size(91, 22);
+            this.forecastNo.Text = "No";
+            this.forecastNo.Click += new System.EventHandler(this.forecastNoClick);
+            // 
+            // sourceCodeToolStripMenuItem
+            // 
+            this.sourceCodeToolStripMenuItem.Image = global::BTEC_Grade_Calculator.Properties.Resources.icons8_code_16;
+            this.sourceCodeToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sourceCodeToolStripMenuItem.Name = "sourceCodeToolStripMenuItem";
+            this.sourceCodeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.sourceCodeToolStripMenuItem.Text = "Source Code";
+            this.sourceCodeToolStripMenuItem.Click += new System.EventHandler(this.sourceClick);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::BTEC_Grade_Calculator.Properties.Resources.icons8_about_16;
+            this.aboutToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutClick);
             // 
             // statusUnits
             // 
@@ -140,7 +154,7 @@
             this.sliderMerit.Location = new System.Drawing.Point(0, 76);
             this.sliderMerit.Maximum = 18;
             this.sliderMerit.Name = "sliderMerit";
-            this.sliderMerit.Size = new System.Drawing.Size(184, 45);
+            this.sliderMerit.Size = new System.Drawing.Size(234, 45);
             this.sliderMerit.TabIndex = 2;
             this.sliderMerit.ValueChanged += new System.EventHandler(this.meritScrolled);
             // 
@@ -152,7 +166,7 @@
             this.sliderPass.Location = new System.Drawing.Point(0, 17);
             this.sliderPass.Maximum = 18;
             this.sliderPass.Name = "sliderPass";
-            this.sliderPass.Size = new System.Drawing.Size(184, 45);
+            this.sliderPass.Size = new System.Drawing.Size(234, 45);
             this.sliderPass.TabIndex = 0;
             this.sliderPass.ValueChanged += new System.EventHandler(this.passScrolled);
             // 
@@ -164,7 +178,7 @@
             this.sliderDist.Location = new System.Drawing.Point(0, 132);
             this.sliderDist.Maximum = 18;
             this.sliderDist.Name = "sliderDist";
-            this.sliderDist.Size = new System.Drawing.Size(184, 45);
+            this.sliderDist.Size = new System.Drawing.Size(234, 45);
             this.sliderDist.TabIndex = 4;
             this.sliderDist.ValueChanged += new System.EventHandler(this.distScrolled);
             // 
@@ -173,7 +187,7 @@
             this.labelDist.BackColor = System.Drawing.Color.Gold;
             this.labelDist.Location = new System.Drawing.Point(0, 114);
             this.labelDist.Name = "labelDist";
-            this.labelDist.Size = new System.Drawing.Size(184, 15);
+            this.labelDist.Size = new System.Drawing.Size(234, 15);
             this.labelDist.TabIndex = 5;
             this.labelDist.Text = "Distinction";
             this.labelDist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,7 +197,7 @@
             this.labelMerit.BackColor = System.Drawing.Color.Silver;
             this.labelMerit.Location = new System.Drawing.Point(0, 55);
             this.labelMerit.Name = "labelMerit";
-            this.labelMerit.Size = new System.Drawing.Size(184, 15);
+            this.labelMerit.Size = new System.Drawing.Size(234, 15);
             this.labelMerit.TabIndex = 6;
             this.labelMerit.Text = "Merit";
             this.labelMerit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -193,27 +207,15 @@
             this.labelPass.BackColor = System.Drawing.Color.BurlyWood;
             this.labelPass.Location = new System.Drawing.Point(0, 0);
             this.labelPass.Name = "labelPass";
-            this.labelPass.Size = new System.Drawing.Size(184, 14);
+            this.labelPass.Size = new System.Drawing.Size(234, 14);
             this.labelPass.TabIndex = 7;
             this.labelPass.Text = "Pass";
             this.labelPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // forecastYes
-            // 
-            this.forecastYes.Name = "forecastYes";
-            this.forecastYes.Size = new System.Drawing.Size(180, 22);
-            this.forecastYes.Text = "Yes";
-            // 
-            // forecastNo
-            // 
-            this.forecastNo.Name = "forecastNo";
-            this.forecastNo.Size = new System.Drawing.Size(180, 22);
-            this.forecastNo.Text = "No";
-            // 
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(184, 261);
+            this.ClientSize = new System.Drawing.Size(234, 261);
             this.Controls.Add(this.labelPass);
             this.Controls.Add(this.labelMerit);
             this.Controls.Add(this.labelDist);
@@ -223,6 +225,7 @@
             this.Controls.Add(this.gradeOutput);
             this.Controls.Add(this.sliderPass);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
