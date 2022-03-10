@@ -8,27 +8,25 @@ set distPoints = unitsAtDist x 90
 
 set totalPoints = passPoints + meritPoints + distPoints
 
-switch totalPoints:
-    case totalPoints < 1260:
-        output "You have failed"
-    case totalPoints >= 1260 and totalPoints < 1300:
-        output "PPP Achieved"
-    case totalPoints >= 1300 and totalPoints < 1340:
-        output "MPP Achieved"
-    case totalPoints >= 1340 and totalPoints < 1380:
-        output "MMP Achieved"
-    case totalPoints >= 1380 and totalPoints < 1420:
-        output "MMM Achieved"
-    case totalPoints >= 1420 and totalPoints < 1460:
-        output "DMM Achieved"
-    case totalPoints >= 1460 and totalPoints < 1500:
-        output "DDM Achieved"
-    case totalPoints >= 1500 and totalPoints < 1530:
-        output "DDD Achieved"
-    case totalPoints >= 1530 and totalPoints < 1560:
-        output "D*DD Achieved"
-    case totalPoints >= 1560 and totalPoints < 1590:
-        output "D*D*D Achieved"
-    case totalPoints >= 1590:
-        output "D*D*D* Achieved"
-end
+if totalPoints < 1260:
+    output "You have failed"
+else if >= 1260 and < 1300:
+    output "PPP Achieved"
+else if >= 1300 and < 1340:
+    output "MPP Achieved"
+else if >= 1340 and < 1380:
+    output "MMP Achieved"
+else if >= 1380 and < 1420:
+    output "MMM Achieved"
+else if >= 1420 and < 1460:
+    output "DMM Achieved"
+else if >= 1460 and < 1500:
+    output "DDM Achieved"
+else if >= 1500 and < 1530:
+    output "DDD Achieved"
+else if >= 1530 and < 1560:
+    output "D*DD Achieved"
+else if >= 1560 and < 1590:
+    output "D*D*D Achieved"
+else >= 1590:
+    output "D*D*D* Achieved"
