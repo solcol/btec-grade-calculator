@@ -7,4 +7,3 @@ For Shaista, Unit 6. I'm not very good at C# and I hate WinForms so excuse the s
 
 ## Acknowledgements
 - Icons from [Icons8](https://icons8.com/). The set is "Office XS"
-- Thanks to [Gab](https://gabriella.moe/) and [Dav](https://davwheat.dev) for the moral support
