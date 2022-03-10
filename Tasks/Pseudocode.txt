@@ -2,23 +2,33 @@ input unitsAtPass
 input unitsAtMerit
 input unitsAtDist
 
-set passPoints = unitsAtPass * 70
-set meritPoints = unitsAtMerit * 80
-set distPoints = unitsAtDist * 90
+set passPoints = unitsAtPass x 70
+set meritPoints = unitsAtMerit x 80
+set distPoints = unitsAtDist x 90
 
 set totalPoints = passPoints + meritPoints + distPoints
 
 switch totalPoints:
     case totalPoints < 1260:
-        print "You have failed"
+        output "You have failed"
     case totalPoints >= 1260 and totalPoints < 1300:
-        print "PPP Achieved"
+        output "PPP Achieved"
     case totalPoints >= 1300 and totalPoints < 1340:
-        print "MPP Achieved"
+        output "MPP Achieved"
     case totalPoints >= 1340 and totalPoints < 1380:
-        print "MMP Achieved"
+        output "MMP Achieved"
     case totalPoints >= 1380 and totalPoints < 1420:
-        print "MMM Achieved"
+        output "MMM Achieved"
     case totalPoints >= 1420 and totalPoints < 1460:
-        print "DMM Achieved"
+        output "DMM Achieved"
+    case totalPoints >= 1460 and totalPoints < 1500:
+        output "DDM Achieved"
+    case totalPoints >= 1500 and totalPoints < 1530:
+        output "DDD Achieved"
+    case totalPoints >= 1530 and totalPoints < 1560:
+        output "D*DD Achieved"
+    case totalPoints >= 1560 and totalPoints < 1590:
+        output "D*D*D Achieved"
+    case totalPoints >= 1590:
+        output "D*D*D* Achieved"
 end
