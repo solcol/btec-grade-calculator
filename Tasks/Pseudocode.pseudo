@@ -1,0 +1,40 @@
+// Requirement: Take user input of
+//              passes/merits/distincitons
+input integer unitsAtPass
+input integer unitsAtMerit
+input integer unitsAtDist
+
+set integer passPoints = unitsAtPass x 70
+set integer meritPoints = unitsAtMerit x 80
+set integer distPoints = unitsAtDist x 90
+
+set integer totalPoints = passPoints + meritPoints + distPoints
+
+
+// Requirement: Here we output the
+//              BTEC final grades
+//              and UCAS points
+
+if totalPoints < 1260 do
+    output "You have failed"
+end else if totalPoints >= 1260 and < 1300 do
+    output "PPP Achieved (48 UCAS Points)"
+end else if totalPoints >= 1300 and < 1340 do
+    output "MPP Achieved (64 UCAS Points)"
+end else if totalPoints >= 1340 and < 1380 do
+    output "MMP Achieved (80 UCAS Points)"
+end else if totalPoints >= 1380 and < 1420 do
+    output "MMM Achieved (96 UCAS Points)"
+end else if totalPoints >= 1420 and < 1460 do
+    output "DMM Achieved (112 UCAS Points)"
+end else if totalPoints >= 1460 and < 1500 do
+    output "DDM Achieved (128 UCAS Points)"
+end else if totalPoints >= 1500 and < 1530 do
+    output "DDD Achieved (144 UCAS Points)"
+end else if totalPoints >= 1530 and < 1560 do
+    output "D*DD Achieved (152 UCAS Points)"
+end else if totalPoints >= 1560 and < 1590 do
+    output "D*D*D Achieved (160 UCAS Points)"
+end else if totalPoints >= 1590 do
+    output "D*D*D* Achieved (168 UCAS Points)"
+end
