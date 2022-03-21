@@ -11,22 +11,22 @@ set totalPoints = passPoints + meritPoints + distPoints
 if totalPoints < 1260:
     output "You have failed"
 else if >= 1260 and < 1300:
-    output "PPP Achieved"
+    output "PPP Achieved (48 UCAS Points)"
 else if >= 1300 and < 1340:
-    output "MPP Achieved"
+    output "MPP Achieved (64 UCAS Points)"
 else if >= 1340 and < 1380:
-    output "MMP Achieved"
+    output "MMP Achieved (80 UCAS Points)"
 else if >= 1380 and < 1420:
-    output "MMM Achieved"
+    output "MMM Achieved (96 UCAS Points)"
 else if >= 1420 and < 1460:
-    output "DMM Achieved"
+    output "DMM Achieved (112 UCAS Points)"
 else if >= 1460 and < 1500:
-    output "DDM Achieved"
+    output "DDM Achieved (128 UCAS Points)"
 else if >= 1500 and < 1530:
-    output "DDD Achieved"
+    output "DDD Achieved (144 UCAS Points)"
 else if >= 1530 and < 1560:
-    output "D*DD Achieved"
+    output "D*DD Achieved (152 UCAS Points)"
 else if >= 1560 and < 1590:
-    output "D*D*D Achieved"
+    output "D*D*D Achieved (160 UCAS Points)"
 else >= 1590:
-    output "D*D*D* Achieved"
+    output "D*D*D* Achieved (168 UCAS Points)"
