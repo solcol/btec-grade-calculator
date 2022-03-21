@@ -19,6 +19,7 @@ namespace BTEC_Grade_Calculator
         private void calculateGrades()
         {
             string finalGrade = "Fail";
+            int ucasPoints = 0;
             int passPoints = sliderPass.Value * 70;
             int meritPoints = sliderMerit.Value * 80;
             int distPoints = sliderDist.Value * 90;
@@ -34,17 +35,19 @@ namespace BTEC_Grade_Calculator
                 totalPoints += assumedPoints;
             }
 
-            if (totalPoints < 1260) { finalGrade = "Fail"; }
-            else if (totalPoints >= 1260 && totalPoints < 1300) { finalGrade = "Pass Pass Pass"; }
-            else if (totalPoints >= 1300 && totalPoints < 1340) { finalGrade = "Merit Pass Pass"; }
-            else if (totalPoints >= 1340 && totalPoints < 1380) { finalGrade = "Merit Merit Pass"; }
-            else if (totalPoints >= 1380 && totalPoints < 1420) { finalGrade = "Merit Merit Merit"; }
-            else if (totalPoints >= 1420 && totalPoints < 1460) { finalGrade = "Dist Merit Merit"; }
-            else if (totalPoints >= 1460 && totalPoints < 1500) { finalGrade = "Dist Dist Merit"; }
-            else if (totalPoints >= 1500 && totalPoints < 1530) { finalGrade = "Dist Dist Dist"; }
-            else if (totalPoints >= 1530 && totalPoints < 1560) { finalGrade = "Dist* Dist Dist"; }
-            else if (totalPoints >= 1560 && totalPoints < 1590) { finalGrade = "Dist* Dist* Dist"; }
-            else if (totalPoints >= 1590) { finalGrade = "Dist* Dist* Dist*"; }
+            if (totalPoints < 1260) { finalGrade = "Fail"; ucasPoints = 0; }
+            else if (totalPoints >= 1260 && totalPoints < 1300) { finalGrade = "Pass Pass Pass"; ucasPoints = 48; }
+            else if (totalPoints >= 1300 && totalPoints < 1340) { finalGrade = "Merit Pass Pass"; ucasPoints = 64; }
+            else if (totalPoints >= 1340 && totalPoints < 1380) { finalGrade = "Merit Merit Pass"; ucasPoints = 80; }
+            else if (totalPoints >= 1380 && totalPoints < 1420) { finalGrade = "Merit Merit Merit"; ucasPoints = 96; }
+            else if (totalPoints >= 1420 && totalPoints < 1460) { finalGrade = "Dist Merit Merit"; ucasPoints = 112; }
+            else if (totalPoints >= 1460 && totalPoints < 1500) { finalGrade = "Dist Dist Merit"; ucasPoints = 128; }
+            else if (totalPoints >= 1500 && totalPoints < 1530) { finalGrade = "Dist Dist Dist"; ucasPoints = 144; }
+            else if (totalPoints >= 1530 && totalPoints < 1560) { finalGrade = "Dist* Dist Dist"; ucasPoints = 152; }
+            else if (totalPoints >= 1560 && totalPoints < 1590) { finalGrade = "Dist* Dist* Dist"; ucasPoints = 160; }
+            else if (totalPoints >= 1590) { finalGrade = "Dist* Dist* Dist*"; ucasPoints = 168; }
+
+            finalGrade += $"{Environment.NewLine}{ucasPoints} UCAS";
 
             if(generateForecast && unitsInputted < 18)
             {
