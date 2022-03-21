@@ -1,12 +1,13 @@
-input unitsAtPass
-input unitsAtMerit
-input unitsAtDist
+input integer unitsAtPass
+input integer unitsAtMerit
+input integer unitsAtDist
 
-set passPoints = unitsAtPass x 70
-set meritPoints = unitsAtMerit x 80
-set distPoints = unitsAtDist x 90
 
-set totalPoints = passPoints + meritPoints + distPoints
+set integer passPoints = unitsAtPass x 70
+set integer meritPoints = unitsAtMerit x 80
+set integer distPoints = unitsAtDist x 90
+
+set integer totalPoints = passPoints + meritPoints + distPoints
 
 if totalPoints < 1260:
     output "You have failed"
